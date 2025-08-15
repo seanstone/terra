@@ -16,32 +16,45 @@ resolver = "2"
 members = ["generate", "planetcam", "preview", "rshader", "types"]
 default-members = [".", "preview"]
 
-[dependencies]
+[workspace.dependencies]
 anyhow = "1.0.70"
 atomicwrites = "0.4.0"
 bytemuck = { version = "1.13.1", features = ["extern_crate_alloc"] }
 cgmath = { version = "0.18.0", features = ["mint", "serde"], git = "https://github.com/rustgd/cgmath", rev = "d5e765db61cf9039cb625a789a59ddf6b6ab2337" }
+ktx2 = "0.3.0"
+mint = "0.5.9"
+num-traits = "0.2.15"
+rayon = "1.7.0"
+wgpu = { version = "0.15.1", features = ["naga"] }
+zip = { version = "0.6.4", features = ["deflate"], default-features = false }
+zstd = "0.12.3"
+
+[dependencies]
+anyhow = { workspace = true }
+atomicwrites = { workspace = true }
+bytemuck = { workspace = true }
+cgmath = { workspace = true }
 crossbeam = "0.8.2"
 dirs = "5.0.0"
 fnv = "1.0.7"
 futures = "0.3.27"
 hyper = { version = "0.14.25", features = ["http1"] }
 hyper-tls = "0.5.0"
-ktx2 = "0.3.0"
+ktx2 = { workspace = true }
 lazy_static = "1.4.0"
 maplit = "1.0.2"
-mint = "0.5.9"
-num-traits = "0.2.15"
+mint = { workspace = true }
+num-traits = { workspace = true }
 quick-xml = { version = "0.28.1", features = ["serialize"] }
-rayon = "1.7.0"
+rayon = { workspace = true }
 rshader = { path = "rshader", features = ["dynamic_shaders"] }
 serde = { version = "1.0.158", features = ["derive"] }
 tokio = { version = "1.26.0", features = ["fs", "macros", "sync", "rt", "rt-multi-thread", "io-util"] }
 terra-types = { path = "types" }
 vec_map = { version = "0.8.2", features = ["serde"] }
-wgpu = "0.15.1"
-zip = { version = "0.6.4", features = ["deflate"], default-features = false }
-zstd = "0.12.3"
+wgpu = { workspace = true }
+zip = { workspace = true }
+zstd = { workspace = true }
 
 [dev-dependencies]
 approx = "0.5.1"
